@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="aset/img/KKO LOGO 640px.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="aset/Css/style.css" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <title>KKO Semarang</title>
+  </head>
+  <body class="bg-white text-gray-900">
+    <header
+      class="fixed top-0 left-0 right-0 z-50 backdrop-blur-lg bg-white/30 shadow-md"
+    >
+      <div
+        class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16"
+      >
+        <!-- Logo & Title -->
+        <a href="#home" class="flex items-center space-x-3">
+          <img
+            src="aset/img/KKO LOGO 640px.png"
+            alt="Logo"
+            class="h-13 w-13 object-contain"
+          />
+          <span class="text-lg font-semibold">KKO SEMARANG</span>
+        </a>
+
+        <!-- Desktop Navigation -->
+        <nav
+          class="hidden md:flex md:flex-row md:space-x-6 text-sm font-medium tracking-wide"
+          id="menu-nav"
+        >
+          <a
+            href="#home"
+            data-target="home"
+            class="menu-item active hover:text-yellow-300 border-b-2 border-yellow-700 text-yellow-700 pb-1 transition-all duration-300 rounded"
+          >
+            Home
+          </a>
+          <a
+            href="#event"
+            data-target="event"
+            class="menu-item hover:text-yellow-300 transition-all duration-300 rounded"
+          >
+            Event & Galeri
+          </a>
+          <a
+            href="#galeri"
+            data-target="galeri"
+            class="menu-item hover:text-yellow-300 transition-all duration-300 rounded"
+          >
+            Galeri
+          </a>
+          <a
+            href="#download"
+            data-target="download"
+            class="menu-item hover:text-yellow-300 transition-all duration-300 rounded"
+          >
+            Download
+          </a>
+          <a
+            href="#formulir"
+            data-target="formulir"
+            class="menu-item hover:text-yellow-300 transition-all duration-300 rounded"
+          >
+            Formulir
+          </a>
+          <a
+            href="#arkas"
+            data-target="arkas"
+            class="menu-item hover:text-yellow-300 transition-all duration-300 rounded"
+          >
+            Informasi ARKAS
+          </a>
+        </nav>
+
+        <!-- Hamburger Button -->
+        <button
+          id="menuBtn"
+          class="relative w-7 h-7 flex flex-col justify-between md:hidden z-50 focus:outline-none"
+        >
+          <span
+            id="line1"
+            class="block h-0.5 w-full bg-black transition-transform duration-300"
+          ></span>
+          <span
+            id="line2"
+            class="block h-0.5 w-full bg-black transition-opacity duration-300"
+          ></span>
+          <span
+            id="line3"
+            class="block h-0.5 w-full bg-black transition-transform duration-300"
+          ></span>
+        </button>
+      </div>
+
+      <!-- Mobile Menu -->
+      <div
+        id="mobileMenu"
+        class="md:hidden hidden flex flex-col bg-white/30 backdrop-blur-md px-4 pt-2 pb-4 space-y-2 font-medium text-center transition-all duration-300 tracking-wide"
+      >
+        <a
+          href="#home"
+          data-target="home"
+          class="mobile-link active hover:text-yellow-300 rounded transition-all duration-300"
+          >Home</a
+        >
+        <a
+          href="#event"
+          data-target="event"
+          class="mobile-link hover:text-yellow-300 rounded transition-all duration-300"
+          >Event & Galeri</a
+        >
+        <a
+          href="#galeri"
+          data-target="galeri"
+          class="mobile-link hover:text-yellow-300 rounded transition-all duration-300"
+          >Galeri</a
+        >
+        <a
+          href="#download"
+          data-target="download"
+          class="mobile-link hover:text-yellow-300 rounded transition-all duration-300"
+          >Download</a
+        >
+        <a
+          href="#formulir"
+          data-target="formulir"
+          class="mobile-link hover:text-yellow-300 rounded transition-all duration-300"
+          >Formulir</a
+        >
+        <a
+          href="#arkas"
+          data-target="arkas"
+          class="mobile-link hover:text-yellow-300 rounded transition-all duration-300"
+          >Informasi ARKAS</a
+        >
+      </div>
+    </header>
+
+    <main class="pt-16">
+      <!-- Home Section -->
+      <section
+        id="home"
+        class="section h-screen flex items-center justify-center block"
+      >
+        <!-- HOME -->
+        <div class="text-center">
+          <h1 class="text-4xl font-bold mb-4">Selamat Datang di KKO Semarang</h1>
+          <p class="text-lg">Komunitas Kreatif Online Semarang</p>
+        </div>
+      </section>
+      <section id="event" class="section py-16 bg-gray-100 hidden">
+        <!-- EVENT -->
+        <div class="text-center">
+          <h2 class="text-3xl font-bold mb-4">Event & Galeri</h2>
+          <p class="text-lg">Informasi tentang event dan galeri kami.</p>
+        </div>
+      </section>
+      <section id="galeri" class="section py-16 bg-gray-100 hidden">
+        <!-- GALERY -->
+        <div class="text-center">
+          <h2 class="text-3xl font-bold mb-4">Galeri</h2>
+          <p class="text-lg">Lihat koleksi foto dan video kami.</p>
+        </div>
+      </section>
+      <section id="download" class="section py-16 bg-gray-100 hidden">
+        <!-- DOWNLOAD -->
+        <div class="text-center">
+          <h2 class="text-3xl font-bold mb-4">Download</h2>
+          <p class="text-lg">Akses berbagai materi dan dokumen yang dapat diunduh.</p>
+        </div>
+      </section>
+      <section id="formulir" class="section py-16 bg-gray-100 hidden">
+        <!-- FORMULIR -->
+        <div class="text-center">
+          <h2 class="text-3xl font-bold mb-4">Formulir Pendaftaran</h2>
+          <p class="text-lg">Isi formulir untuk bergabung dengan komunitas kami.</p>
+        </div>
+      </section>
+      <section id="arkas" class="section py-16 bg-gray-100 hidden">
+        <!-- APLIKASI ARKAS -->
+        <div class="text-center">
+          <h2 class="text-3xl font-bold mb-4">Informasi ARKAS</h2>
+          <p class="text-lg">Dapatkan informasi terbaru tentang aplikasi ARKAS.</p>
+        </div>
+      </section>
+      <!-- Dan seterusnya... -->
+    </main>
+
+    <!-- External Script -->
+    <script src="aset/Js/script.js"></script>
+  </body>
+</html>
