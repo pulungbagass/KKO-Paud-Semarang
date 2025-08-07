@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
-  // Element Referensi
+  // 🔗 Element Referensi
   const hamburgerBtn = document.getElementById("menuBtn");
   const mobileNav = document.getElementById("mobileMenu");
   const desktopLinks = document.querySelectorAll(".menu-item");
@@ -10,12 +10,13 @@ document.addEventListener("DOMContentLoaded", () => {
   const lineMiddle = document.getElementById("line2");
   const lineBottom = document.getElementById("line3");
 
-  const carousel = document.getElementById("controls-carousel");
+  const carousel = document.querySelector("[data-carousel='static']");
   const items = carousel.querySelectorAll("[data-carousel-item]");
   const prevBtn = carousel.querySelector("[data-carousel-prev]");
   const nextBtn = carousel.querySelector("[data-carousel-next]");
+  let currentIndex = 0;
 
-  // 🔁 Toggle Mobile Menu + Hamburger Animasi
+  // 🍔 Toggle Mobile Menu + Hamburger Animasi
   hamburgerBtn.addEventListener("click", () => {
     mobileNav.classList.toggle("hidden");
     lineTop.classList.toggle("rotate-45");
@@ -25,25 +26,24 @@ document.addEventListener("DOMContentLoaded", () => {
     lineBottom.classList.toggle("-translate-y-3");
   });
 
-  // 🔽 Reset Hamburger saat menu mobile diklik
+  // 📱 Klik menu mobile
   mobileLinks.forEach((link) => {
     link.addEventListener("click", (e) => {
       e.preventDefault();
       const target = link.getAttribute("data-target");
       activateSection(target);
 
-      // Reset hamburger + tutup nav
       mobileNav.classList.add("hidden");
       lineTop.classList.remove("rotate-45", "translate-y-3");
       lineMiddle.classList.remove("opacity-0");
       lineBottom.classList.remove("-rotate-45", "-translate-y-3");
 
       updateActiveLink(mobileLinks, link);
-      updateActiveLink(desktopLinks, null); // clear desktop highlight
+      updateActiveLink(desktopLinks, null);
     });
   });
 
-  // 🔒 Klik di luar menu menutup mobile nav
+  // 🧼 Klik di luar menu menutup nav
   document.addEventListener("click", (e) => {
     const isClickInside = mobileNav.contains(e.target);
     const isHamburger = hamburgerBtn.contains(e.target);
@@ -55,7 +55,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  // 🖥️ Menu Aktif (Desktop)
+  // 🖥️ Klik menu desktop
   desktopLinks.forEach((item) => {
     item.addEventListener("click", (e) => {
       e.preventDefault();
@@ -63,25 +63,22 @@ document.addEventListener("DOMContentLoaded", () => {
       activateSection(target);
 
       updateActiveLink(desktopLinks, item);
-      updateActiveLink(mobileLinks, null); // clear mobile highlight
+      updateActiveLink(mobileLinks, null);
     });
   });
 
-  // ✨ Scroll halus semua anchor link
+  // ✨ Scroll halus anchor
   document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
     anchor.addEventListener("click", function (e) {
       e.preventDefault();
       const targetSection = document.querySelector(this.getAttribute("href"));
       if (targetSection) {
-        targetSection.scrollIntoView({
-          behavior: "smooth",
-          block: "start",
-        });
+        targetSection.scrollIntoView({ behavior: "smooth", block: "start" });
       }
     });
   });
 
-  // 🌟 Fungsi: Tampilkan section sesuai menu aktif
+  // 🧩 Fungsi: Tampilkan section aktif
   function activateSection(targetId) {
     sections.forEach((sec) => {
       sec.classList.toggle("hidden", sec.id !== targetId);
@@ -101,8 +98,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   };
 
-  
-  // 🌟 Fungsi: Update styling menu aktif
+  // 🎨 Fungsi: Update menu aktif
   function updateActiveLink(links, activeItem) {
     links.forEach((el) =>
       el.classList.remove(
@@ -124,15 +120,10 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
-  // 🔰 Default tampilkan Home
+  // 🏠 Default tampilkan Home
   activateSection("home");
 
-  // 🔁 Carousel Control
-  let currentIndex = Array.from(items).findIndex(item =>
-    item.getAttribute("data-carousel-item") === "active"
-  );
-
-  // 🔁 Fungsi: Tampilkan slide berdasarkan index
+  // 🎞️ Fungsi: Tampilkan slide
   function showSlide(index) {
     items.forEach((item, i) => {
       item.classList.add("hidden");
@@ -146,6 +137,8 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
+  
+
   // ▶️ Next Slide
   nextBtn.addEventListener("click", () => {
     currentIndex = (currentIndex + 1) % items.length;
@@ -158,6 +151,12 @@ document.addEventListener("DOMContentLoaded", () => {
     showSlide(currentIndex);
   });
 
+  // ⏱️ Auto-slide setiap 2 detik
+  setInterval(() => {
+    currentIndex = (currentIndex + 1) % items.length;
+    showSlide(currentIndex);
+  }, 2000);
+
   // 🚀 Inisialisasi pertama
-  showSlide(currentIndex >= 0 ? currentIndex : 0);
+  showSlide(currentIndex);
 });
