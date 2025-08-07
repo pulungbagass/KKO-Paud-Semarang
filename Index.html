@@ -27,6 +27,8 @@
 
         <!-- Desktop Navigation -->
         <nav
+          role="navigation"
+          aria-label="Main Navigation"
           class="hidden md:flex md:flex-row md:space-x-6 text-sm font-medium tracking-wide"
           id="menu-nav"
         >
@@ -42,7 +44,7 @@
             data-target="event"
             class="menu-item hover:text-yellow-300 transition-all duration-300 rounded"
           >
-            Event & Galeri
+            Event
           </a>
           <a
             href="#galeri"
@@ -74,6 +76,51 @@
           </a>
         </nav>
 
+        <!-- Mobile Menu -->
+        <div
+          role="navigation"
+          aria-label="Main Navigation"
+          id="mobileMenu"
+          class="md:hidden hidden flex flex-col bg-white/30 backdrop-blur-md px-4 pt-2 pb-4 space-y-2 font-medium text-center transition-all duration-300 tracking-wide"
+        >
+          <a
+            href="#home"
+            data-target="home"
+            class="mobile-link active hover:text-yellow-300 rounded transition-all duration-300"
+            >Home</a
+          >
+          <a
+            href="#event"
+            data-target="event"
+            class="mobile-link hover:text-yellow-300 rounded transition-all duration-300"
+            >Event</a
+          >
+          <a
+            href="#galeri"
+            data-target="galeri"
+            class="mobile-link hover:text-yellow-300 rounded transition-all duration-300"
+            >Galeri</a
+          >
+          <a
+            href="#download"
+            data-target="download"
+            class="mobile-link hover:text-yellow-300 rounded transition-all duration-300"
+            >Download</a
+          >
+          <a
+            href="#formulir"
+            data-target="formulir"
+            class="mobile-link hover:text-yellow-300 rounded transition-all duration-300"
+            >Formulir</a
+          >
+          <a
+            href="#arkas"
+            data-target="arkas"
+            class="mobile-link hover:text-yellow-300 rounded transition-all duration-300"
+            >Informasi ARKAS</a
+          >
+        </div>
+
         <!-- Hamburger Button -->
         <button
           id="menuBtn"
@@ -93,49 +140,6 @@
           ></span>
         </button>
       </div>
-
-      <!-- Mobile Menu -->
-      <div
-        id="mobileMenu"
-        class="md:hidden hidden flex flex-col bg-white/30 backdrop-blur-md px-4 pt-2 pb-4 space-y-2 font-medium text-center transition-all duration-300 tracking-wide"
-      >
-        <a
-          href="#home"
-          data-target="home"
-          class="mobile-link active hover:text-yellow-300 rounded transition-all duration-300"
-          >Home</a
-        >
-        <a
-          href="#event"
-          data-target="event"
-          class="mobile-link hover:text-yellow-300 rounded transition-all duration-300"
-          >Event & Galeri</a
-        >
-        <a
-          href="#galeri"
-          data-target="galeri"
-          class="mobile-link hover:text-yellow-300 rounded transition-all duration-300"
-          >Galeri</a
-        >
-        <a
-          href="#download"
-          data-target="download"
-          class="mobile-link hover:text-yellow-300 rounded transition-all duration-300"
-          >Download</a
-        >
-        <a
-          href="#formulir"
-          data-target="formulir"
-          class="mobile-link hover:text-yellow-300 rounded transition-all duration-300"
-          >Formulir</a
-        >
-        <a
-          href="#arkas"
-          data-target="arkas"
-          class="mobile-link hover:text-yellow-300 rounded transition-all duration-300"
-          >Informasi ARKAS</a
-        >
-      </div>
     </header>
 
     <main class="pt-16">
@@ -153,30 +157,30 @@
           <!-- Carousel wrapper -->
           <div class="relative h-56 overflow-hidden rounded-lg md:h-96">
             <!-- Item -->
-            <div class="hidden duration-700 ease-in-out" data-carousel-item>
+            <div class="hidden opacity-100 transition-opacity duration-700 ease-in-out" data-carousel-item>
               <img
                 src="aset/img/5.jpg"
                 class="absolute block w-full -translate-x-1/2 -translate-y-1/3 top-1/2 left-1/2"
                 alt="..."
-                loading="lazy"
+                loading="async"
               />
             </div>
             <!-- Item -->
-            <div class="hidden duration-700 ease-in-out" data-carousel-item>
+            <div class="hidden opacity-100 transition-opacity duration-700 ease-in-out" data-carousel-item>
               <img
                 src="aset/img/1.jpg"
                 class="absolute block w-full -translate-x-1/2 -translate-y-1/3 top-1/2 left-1/2"
                 alt="..."
-                loading="lazy"
+                loading="async"
               />
             </div>
             <!-- Item -->
-            <div class="hidden duration-700 ease-in-out" data-carousel-item>
+            <div class="hidden opacity-100 transition-opacity duration-700 ease-in-out" data-carousel-item>
               <img
                 src="aset/img/2.jpg"
                 class="absolute block w-full -translate-x-1/2 -translate-y-1/3 top-1/2 left-1/2"
                 alt="..."
-                loading="lazy"
+                loading="async"
               />
             </div>
           </div>
@@ -325,7 +329,7 @@
               class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6 justify-items-center"
             >
               <!-- 🔹 Menu Item -->
-               <!-- DAPODIK -->
+              <!-- DAPODIK -->
               <a
                 href="https://dapo.kemendikdasmen.go.id/"
                 target="_blank"
@@ -444,7 +448,6 @@
                   SP VERVAL
                 </h3>
               </a>
-              
             </div>
           </div>
         </div>

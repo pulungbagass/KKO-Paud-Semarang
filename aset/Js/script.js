@@ -1,3 +1,4 @@
+
 document.addEventListener("DOMContentLoaded", () => {
   // 🔗 Element Referensi
   const hamburgerBtn = document.getElementById("menuBtn");
@@ -125,17 +126,29 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // 🎞️ Fungsi: Tampilkan slide
   function showSlide(index) {
-    items.forEach((item, i) => {
-      item.classList.add("hidden");
-      item.removeAttribute("data-carousel-item");
-      if (i === index) {
-        item.classList.remove("hidden");
+  if (!items.length) return;
+
+  items.forEach((item, i) => {
+    if (i === index) {
+      item.classList.remove("hidden");
+      setTimeout(() => {
+        item.classList.add("opacity-100");
+        item.classList.remove("opacity-0");
         item.setAttribute("data-carousel-item", "active");
-      } else {
-        item.setAttribute("data-carousel-item", "");
-      }
-    });
-  }
+      }, 50); // Delay kecil agar transisi bisa jalan
+    } else {
+      item.classList.remove("opacity-100");
+      item.classList.add("opacity-0");
+      item.setAttribute("data-carousel-item", "");
+
+      // Delay sebelum hide agar fade-out selesai
+      setTimeout(() => {
+        item.classList.add("hidden");
+      }, 700); // Sesuai durasi animasi
+    }
+  });
+}
+
 
   
 
@@ -155,7 +168,7 @@ document.addEventListener("DOMContentLoaded", () => {
   setInterval(() => {
     currentIndex = (currentIndex + 1) % items.length;
     showSlide(currentIndex);
-  }, 2000);
+  }, 5000);
 
   // 🚀 Inisialisasi pertama
   showSlide(currentIndex);
