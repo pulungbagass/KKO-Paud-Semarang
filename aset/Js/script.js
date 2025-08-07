@@ -10,6 +10,11 @@ document.addEventListener("DOMContentLoaded", () => {
   const lineMiddle = document.getElementById("line2");
   const lineBottom = document.getElementById("line3");
 
+  const carousel = document.getElementById("controls-carousel");
+  const items = carousel.querySelectorAll("[data-carousel-item]");
+  const prevBtn = carousel.querySelector("[data-carousel-prev]");
+  const nextBtn = carousel.querySelector("[data-carousel-next]");
+
   // 🔁 Toggle Mobile Menu + Hamburger Animasi
   hamburgerBtn.addEventListener("click", () => {
     mobileNav.classList.toggle("hidden");
@@ -63,7 +68,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   // ✨ Scroll halus semua anchor link
-  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
     anchor.addEventListener("click", function (e) {
       e.preventDefault();
       const targetSection = document.querySelector(this.getAttribute("href"));
@@ -83,6 +88,20 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
+  // 📖 Fungsi: Toggle Read More
+  window.toggleText = function () {
+    const moreText = document.getElementById("moreText");
+    const button = event.target;
+    if (moreText.classList.contains("hidden")) {
+      moreText.classList.remove("hidden");
+      button.textContent = "Read less...";
+    } else {
+      moreText.classList.add("hidden");
+      button.textContent = "Read more...";
+    }
+  };
+
+  
   // 🌟 Fungsi: Update styling menu aktif
   function updateActiveLink(links, activeItem) {
     links.forEach((el) =>
@@ -107,4 +126,38 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // 🔰 Default tampilkan Home
   activateSection("home");
+
+  // 🔁 Carousel Control
+  let currentIndex = Array.from(items).findIndex(item =>
+    item.getAttribute("data-carousel-item") === "active"
+  );
+
+  // 🔁 Fungsi: Tampilkan slide berdasarkan index
+  function showSlide(index) {
+    items.forEach((item, i) => {
+      item.classList.add("hidden");
+      item.removeAttribute("data-carousel-item");
+      if (i === index) {
+        item.classList.remove("hidden");
+        item.setAttribute("data-carousel-item", "active");
+      } else {
+        item.setAttribute("data-carousel-item", "");
+      }
+    });
+  }
+
+  // ▶️ Next Slide
+  nextBtn.addEventListener("click", () => {
+    currentIndex = (currentIndex + 1) % items.length;
+    showSlide(currentIndex);
+  });
+
+  // ◀️ Previous Slide
+  prevBtn.addEventListener("click", () => {
+    currentIndex = (currentIndex - 1 + items.length) % items.length;
+    showSlide(currentIndex);
+  });
+
+  // 🚀 Inisialisasi pertama
+  showSlide(currentIndex >= 0 ? currentIndex : 0);
 });

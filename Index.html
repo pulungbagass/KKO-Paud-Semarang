@@ -139,19 +139,189 @@
     </header>
 
     <main class="pt-16">
-      <!-- Home Section -->
+      <!-- 🏠 Home Section -->
       <section
         id="home"
-        class="section h-screen flex items-center justify-center block"
+        class="section pt-20 pb-10 flex flex-col items-center justify-center px-6"
       >
-        <!-- HOME -->
-        <div class="text-center">
-          <h1 class="text-4xl font-bold mb-4">Selamat Datang di KKO Semarang</h1>
-          <p class="text-lg">Komunitas Kreatif Online Semarang</p>
+        <!-- Carousel -->
+
+        <div
+          id="controls-carousel"
+          class="relative w-full mb-10 mt-6"
+          data-carousel="static"
+        >
+          <!-- Carousel wrapper -->
+          <div class="relative h-56 overflow-hidden rounded-lg md:h-96">
+            <!-- Item -->
+            <div class="hidden duration-700 ease-in-out" data-carousel-item>
+              <img
+                src="aset/img/5.jpg"
+                class="absolute block w-full -translate-x-1/2 -translate-y-1/3 top-1/2 left-1/2"
+                alt="..."
+                loading="lazy"
+              />
+            </div>
+            <!-- Item -->
+            <div class="hidden duration-700 ease-in-out" data-carousel-item>
+              <img
+                src="aset/img/1.jpg"
+                class="absolute block w-full -translate-x-1/2 -translate-y-1/3 top-1/2 left-1/2"
+                alt="..."
+                loading="lazy"
+              />
+            </div>
+            <!-- Item -->
+            <div class="hidden duration-700 ease-in-out" data-carousel-item>
+              <img
+                src="aset/img/2.jpg"
+                class="absolute block w-full -translate-x-1/2 -translate-y-1/3 top-1/2 left-1/2"
+                alt="..."
+                loading="lazy"
+              />
+            </div>
+          </div>
+          <!-- Slider controls -->
+          <button
+            type="button"
+            class="absolute top-0 start-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
+            data-carousel-prev
+          >
+            <span
+              class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none"
+            >
+              <svg
+                class="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 6 10"
+              >
+                <path
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M5 1 1 5l4 4"
+                />
+              </svg>
+              <span class="sr-only">Previous</span>
+            </span>
+          </button>
+          <button
+            type="button"
+            class="absolute top-0 end-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
+            data-carousel-next
+          >
+            <span
+              class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none"
+            >
+              <svg
+                class="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 6 10"
+              >
+                <path
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="m1 9 4-4-4-4"
+                />
+              </svg>
+              <span class="sr-only">Next</span>
+            </span>
+          </button>
+        </div>
+
+        <!-- Judul Utama -->
+        <div
+          class="judul text-center w-full mb-12 pt-4 pb-4 bg-blue-500 rounded-lg shadow-lg"
+        >
+          <h1 class="text-4xl font-bold mb-4">
+            Selamat Datang di KKO Semarang
+          </h1>
+          <p class="text-lg text-gray-700">Komunitas Kreatif Online Semarang</p>
+        </div>
+
+        <!-- Konten Utama -->
+        <div
+          class="content flex flex-col md:flex-row items-start md:items-center justify-center gap-8 w-full max-w-6xl"
+        >
+          <!-- 📝 Intro (Kiri) -->
+          <div class="intro md:w-2/3">
+            <h2 class="text-3xl font-bold text-center md:text-left mb-4">
+              Viveno Susilo bla bla
+            </h2>
+            <p class="text-left text-lg leading-relaxed indent-8 bg-white">
+              Assalamu’alaikum warahmatullahi wabarakatuh, Salam Sejahtera bagi
+              kita semua, Namo Buddhaya, Om Swastiastu Om, Salam Kebajikan, Puji
+              syukur kepada Tuhan yang maha kuasa atas segala rahmat dan
+              berkat-NYA kepada kita semua pengurus dan anggota KKO PAUD
+              sehingga kita masih dapat berbagi, masih terus bekerja cerdas demi
+              kemajuan kita semua.
+              <span id="moreText" class="hidden">
+                <br /><br />
+                Perkembangan dunia internet sangat pesat dan menjadi salah satu
+                indikator kemajuan teknologi informasi dan komunikasi di
+                Indonesia. Hal ini terbukti dengan semakin meratanya akses
+                internet hingga ke pelosok desa. Internet sebagai media
+                informasi super cepat sepertinya telah menjadi salah satu
+                kebutuhan pokok informasi bagi siapapun tanpa terkecuali.
+                <br /><br />
+                Segala hal yang berbau teknologi menjadi senjata bagi Revolusi
+                Industri 4.0.; Mengapa? Revolusi ini mengasumsikan adanya
+                perubahan cara dari yang tradisional menuju modern. Singkatnya,
+                segala sesuatu yang kita kerjakan sangat bergantung pada
+                teknologi dan algoritmanya masing-masing. Semua orang dituntut
+                untuk dapat mahir menggunakan teknologi.
+                <br /><br />
+                Berkenaan dengan itu, sebagai organisasi yang memberikan
+                perhatian penuh terhadap aspek peningkatan Kompetensi TIK pada
+                setiap kegiatan guru, Operator Sekolah, KS meluncurkan Website:
+                guna memenuhi kebutuhan akan informasi yang terkait dengan
+                Dapodik, NISN, E-raport, NUPTK, SIMPKB dan semua informasi
+                seputar dunia pendidikan serta menjadi sarana komunikasi yang
+                efektif di era digital dan internet.
+                <br /><br />
+                Harapan kami, dengan diluncurkannya website ini, KKO PAUD dapat
+                menjadi sumber informasi yang berkaitan dengan hal di atas.
+                Melalui team IT yang ada di dalam KKO PAUD akan berusaha untuk
+                selalu update secara berkala sehingga pengguna dan masyarakat
+                luas dapat melihat perkembangan digitalisasi pendidikan.
+                <br /><br />
+                Dukungan, masukan dan saran dari pengurus dan anggota KKO PAUD
+                serta pengunjung website sangat kami harapkan untuk menjadi
+                bahan evaluasi bagi kami supaya terus menerus memberikan yang
+                terbaik di masa mendatang.
+                <br /><br />
+                Semarang, 12 Maret 2022 Ketua Umum
+              </span>
+              <button
+                onclick="toggleText()"
+                class="text-blue-600 hover:underline ml-2 mt-4 block"
+              >
+                Read more...
+              </button>
+            </p>
+          </div>
+
+          <!-- 🖼️ Logo (Kanan) -->
+          <div class="logo ml-25 md:w-1/3 flex justify-center items-center ">
+            <img
+              src="aset/img/pakVino.JPG"
+              alt="KKO Semarang Logo"
+              loading="lazy"
+              class="w-56 h-auto object-contain border border-gray-300 rounded-lg shadow-lg"
+            />
+          </div>
         </div>
       </section>
+
+      <!-- EVENT -->
       <section id="event" class="section py-16 bg-gray-100 hidden">
-        <!-- EVENT -->
         <div class="text-center">
           <h2 class="text-3xl font-bold mb-4">Event & Galeri</h2>
           <p class="text-lg">Informasi tentang event dan galeri kami.</p>
@@ -168,21 +338,27 @@
         <!-- DOWNLOAD -->
         <div class="text-center">
           <h2 class="text-3xl font-bold mb-4">Download</h2>
-          <p class="text-lg">Akses berbagai materi dan dokumen yang dapat diunduh.</p>
+          <p class="text-lg">
+            Akses berbagai materi dan dokumen yang dapat diunduh.
+          </p>
         </div>
       </section>
       <section id="formulir" class="section py-16 bg-gray-100 hidden">
         <!-- FORMULIR -->
         <div class="text-center">
           <h2 class="text-3xl font-bold mb-4">Formulir Pendaftaran</h2>
-          <p class="text-lg">Isi formulir untuk bergabung dengan komunitas kami.</p>
+          <p class="text-lg">
+            Isi formulir untuk bergabung dengan komunitas kami.
+          </p>
         </div>
       </section>
       <section id="arkas" class="section py-16 bg-gray-100 hidden">
         <!-- APLIKASI ARKAS -->
         <div class="text-center">
           <h2 class="text-3xl font-bold mb-4">Informasi ARKAS</h2>
-          <p class="text-lg">Dapatkan informasi terbaru tentang aplikasi ARKAS.</p>
+          <p class="text-lg">
+            Dapatkan informasi terbaru tentang aplikasi ARKAS.
+          </p>
         </div>
       </section>
       <!-- Dan seterusnya... -->
